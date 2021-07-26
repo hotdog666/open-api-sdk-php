@@ -1,0 +1,29 @@
+{
+	"name": "hotdog666/open-api-sdk-php",
+	"version": "1.0.0",
+	"description": "SDK для работы с Open API",
+	"type": "library",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "Alexandr Nikitin",
+			"email": "a.nikitin@mail.business.ru"
+		}
+	],
+	"require": {
+		"php": ">=7.4",
+		"ext-curl": "*",
+		"ext-json": "*",
+		"symfony/http-client": "^5.3",
+		"symfony/http-kernel": "^5.3",
+		"symfony/cache": "^5.3",
+		"symfony/http-foundation": "^5.3.2",
+		"predis/predis": "^1.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Open\\Api\\": "src/",
+			"Open\\Api\\Exception\\": "src/Exception"
+		}
+	}
+}
