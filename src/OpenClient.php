@@ -71,7 +71,7 @@ final class OpenClient
 	{
 		$this->appID = $appID;
 		$this->secret = $secret;
-		$this->nonce = "nonce_" . microtime();
+		$this->nonce = "nonce_" . str_replace(".", "", microtime(true));
 		#Подключение к redis
 		$cacheRedis = RedisAdapter::createConnection(
 			getenv('REDIS_DSN'),
@@ -294,7 +294,7 @@ final class OpenClient
 			"GET",
 			"Command/$commandID",
 			[
-				"nonce" => "nonce_" . microtime(),
+				"nonce" => "nonce_" . str_replace(".", "", microtime(true)),
 				"token" => $this->token,
 				"app_id" => $this->appID
 			]
